@@ -1,0 +1,10 @@
+.input-minutes {
+    float: none;
+    margin: 1em auto;
+}
+
+label {
+    width: 100%;
+    text-align: right;
+    font-weight: bold;
+}

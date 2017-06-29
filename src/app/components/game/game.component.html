@@ -1,0 +1,14 @@
+<div class="game" *ngIf="imagesName">
+  <div class="timer-container">
+    <div id="timer"></div>
+    <div class="img-name">{{imagesName[image]}}</div>
+  </div>
+  <div class="image-container w3-content w3-display-container">
+    <img id="img" class="mySlides" src="/assets/images/GroupNumber{{groupNumber}}/{{imagesName[image]}}.jpg" />
+    <!--<img src="https://market.marmelada.co.il/photos/239923.jpg">-->
+  </div>
+  <div class="btn-container" *ngIf="!endGame">
+    <button (click)="prev()" [disabled]="image===0">הקודם</button>
+    <button (click)="next()" [disabled]="image===(imagesName.length - 1)">הבא</button>
+  </div>
+</div>

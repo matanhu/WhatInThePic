@@ -1,0 +1,25 @@
+<h1 class="header">
+  כנס משפחות - אברהם ואסתר בן אליעזר
+</h1>
+<div class="row">
+  <div class="col-md-2 form-group input-minutes">
+    <label for="gameMinutes">דקות משחק</label> 
+    <input type="number" name="gameMinutes" id="gameMinutes" class="form-control" placeholder="דקות משחק" [(ngModel)]="gameMinutes">
+  </div>
+</div>
+<div class="box-container">
+  <a [routerLink]="['/game',1, gameMinutes]" class="box">
+    <div>קבוצה 1</div>
+  </a>
+  <a [routerLink]="['/game',2, gameMinutes]" class="box">
+    <div>קבוצה 2</div>
+  </a>
+</div>
+<div class="box-container">
+  <a [routerLink]="['/game',3, gameMinutes]" class="box">
+    <div>קבוצה 3</div>
+  </a>
+  <a [routerLink]="['/game',4, gameMinutes]" class="box">
+    <div>קבוצה 4</div>
+  </a>
+</div>
