@@ -13,7 +13,7 @@ export class GameComponent implements OnInit, OnDestroy {
   @Input()
   private groupNumber: number;
   @Input()
-  private gameMinutes: number;
+  private gameMinutes: string;
 
   private image: any = 0;
   private endGame: boolean = false;
@@ -27,8 +27,9 @@ export class GameComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.gameService.getImageList(this.groupNumber).subscribe(res => {
       this.imagesName = res;
+      this.gameMinutes = this.gameMinutes !== 'undefined' ? this.gameMinutes : '2';
       this.countDownDate = new Date();
-      this.countDownDate.setMinutes(this.countDownDate.getMinutes() + this.gameMinutes);
+      this.countDownDate.setMinutes(this.countDownDate.getMinutes() + Number(this.gameMinutes));
       this.initTimer();
     });
 
