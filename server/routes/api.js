@@ -13,15 +13,22 @@ router.get('/', (req, res) => {
 
 router.get('/getListFiles/:groupNumber', (req, res) => {
   var listImageNames = [];
-  // fs.readdir(path.join(__dirname, '../../dist/assets/images/GroupNumber' + req.params.groupNumber), (err, files) => {
-  //   files.forEach(file => {
-  //     console.log(file);
-  //     if(file.indexOf('.jpg')> -1){
-  //       listImageNames.push(file.replace('.jpg', ''));
-  //     }
-  //   });
+  try{
+    fs.readdir(path.join(__dirname, '../../dist/assets/images/GroupNumber' + req.params.groupNumber), (err, files) => {
+      files.forEach(file => {
+        console.log(file);
+        if(file.indexOf('.jpg')> -1){
+          listImageNames.push(file.replace('.jpg', ''));
+        }
+      });
+      console.log('Success read folder');
+      res.send(JSON.stringify(listImageNames));
+    })
+  } catch(err) {
+    console.log('Error read folder: ' + err);
     res.send(JSON.stringify(listImageNames));
-  // })
+  }
+  
 });
 
 module.exports = router;
