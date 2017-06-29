@@ -21,7 +21,7 @@ router.get('/getListFiles/:groupNumber', (req, res) => {
   //     }
   //   });
     res.send(JSON.stringify(listImageNames));
-  })
+  // })
 });
 
 module.exports = router;
