@@ -15,7 +15,7 @@ router.get('/getListFiles/:groupNumber', (req, res) => {
   var listImageNames = [];
   try{
     fs.readdir(path.join(__dirname, '../../dist/assets/images/GroupNumber' + req.params.groupNumber), (err, files) => {
-      if(file) {
+      if(files) {
         files.forEach(file => {
           console.log(file);
           if(file.indexOf('.jpg')> -1){
