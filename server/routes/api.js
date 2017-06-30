@@ -23,8 +23,9 @@ router.get('/getListFiles/:groupNumber', (req, res) => {
           }
         });
         console.log('Success read folder');
+        res.send(JSON.stringify(listImageNames));
       }
-      res.send(JSON.stringify(listImageNames));
+      res.send(JSON.stringify(__dirname));
     })
   } catch(err) {
     console.log('Error read folder: ' + err);
